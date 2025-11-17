@@ -1369,4 +1369,3 @@ This tracking information ensures proper logging and reporting of all call outco
 ---
 
 This unified prompt enables you to handle all patient interactions naturally and effectively while maintaining all business rules, security requirements, and operational procedures.
-
