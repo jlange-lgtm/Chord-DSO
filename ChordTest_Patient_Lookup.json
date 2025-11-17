@@ -1,10 +1,9 @@
 {
   "name": "Patient_Lookup",
-  "description": "Use this tool to search for a patient by date of birth using the NexHealth API. This tool queries the NexHealth API to find patient records matching the provided date of birth.",
+  "description": "Use this tool to search for an existing patient by date of birth using the NexHealth API. This tool queries the NexHealth API to find patient records matching the provided date of birth.",
   "color": "linear-gradient(rgb(37,200,203), rgb(228,58,251))",
   "iconSrc": "",
   "schema": "[{\"id\":0,\"property\":\"dateOfBirth\",\"description\":\"The date of birth of the patient to search for (format: YYYY-MM-DD).\",\"type\":\"string\",\"required\":true}]",
   "func": "const fetch = require('node-fetch');\nconst dateOfBirth = $dateOfBirth;\n\nconst apiKey = `dXNlci0yNzQtcHJvZHVjdGlvbg.eqAjEe1KyadP0pZ56bNbULBObZG3VKqU`;\n\nconst myHeaders = {\n    \"Accept\": \"application/vnd.Nexhealth+json;version=2\",\n    \"Authorization\": apiKey\n};\n\nconst requestOptions = {\n    method: \"POST\",\n    headers: myHeaders,\n    redirect: \"follow\"\n};\n\n// First, authenticate to get the token\nfetch(\"https://nexhealth.info/authenticates\", requestOptions)\n    .then((response) => response.json())\n    .then((authResult) => {\n        console.log('Auth response:', authResult);\n        const authToken = authResult.data.token;\n        console.log('Auth Token:', authToken);\n\n        // Now search for patients with the auth token\n        const patientHeaders = {\n            \"Accept\": \"application/vnd.Nexhealth+json;version=2\",\n            \"Authorization\": \"Bearer \" + authToken\n        };\n\n        const patientRequestOptions = {\n            method: \"GET\",\n            headers: patientHeaders,\n            redirect: \"follow\"\n        };\n\n        return fetch(`https://nexhealth.info/patients?subdomain=cdm&location_id=333725&date_of_birth=${dateOfBirth}`, patientRequestOptions);\n    })\n    .then((response) => response.json())\n    .then((result) => {\n        console.log('Patient search result:', result);\n        const patientResult = result;\n        console.log(patientResult);\n        return patientResult;\n    })\n    .catch((error) => console.error('Error:', error));",
   "workspaceId": "9e7c759d-2623-4529-945d-6c578631aad0"
 }
-
