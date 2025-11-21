@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "error": "Create patient failed with status 400:\n{\n  \"code\": false,\n  \"description\": null,\n  \"data\": null,\n  \"error\": [\n    \"Missing parameter provider\",\n    \"Missing parameter provider[provider_id]\",\n    \"Missing parameter patient[email]\",\n    \"Missing parameter patient[bio]\",\n    \"Missing parameter patient[bio][date_of_birth]\",\n    \"Missing parameter patient[bio][phone_number]\",\n    \"Blank values not allowed for parameter patient[bio][phone_number]\"\n  ]\n}",
+  "errorType": "Error",
+  "timestamp": "2025-11-20T22:21:58.485Z"
+}

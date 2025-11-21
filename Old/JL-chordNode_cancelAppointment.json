@@ -1,0 +1,9 @@
+{
+  "name": "chordNode_cancelAppointment",
+  "description": "This tool is used to cancel an existing patient appointment. It needs to have the appointment ID passed into it.",
+  "color": "linear-gradient(rgb(199,59,167), rgb(225,225,56))",
+  "iconSrc": "",
+  "schema": "[{\"id\":0,\"property\":\"apptId\",\"description\":\"This is the ID of the appointment to be cancelled\",\"type\":\"string\",\"required\":false}]",
+  "func": "\nconst fetch = require('node-fetch');\nconst url = `https://c1-aicoe-nodered-lb.prod.c1conversations.io/FabricWorkflow/api/exposed/exposed/chord/cancelAppt`;\nconst apptId = $apptId;\n\ntry {\n    const response = await fetch(url, {\n        method: 'POST',\n        headers: {\n            'Content-Type': 'application/json'\n        },\n        body: JSON.stringify({\n            apptId: apptId\n        })\n    });\n    \n    const result = await response.json();\n\n    if (!response.ok) {\n        throw new Error(`HTTP ${response.status}: ${response.statusText}`);\n    }\n    return JSON.stringify(result);\n} catch (error) {\n    console.error('cancelAppointment error:', error);\n    return JSON.stringify({\n        \"error\": error\n    });\n}",
+  "workspaceId": "9e7c759d-2623-4529-945d-6c578631aad0"
+}

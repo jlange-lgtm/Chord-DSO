@@ -1,0 +1,13 @@
+{
+  "tool": "chordGen_cancelAppointment",
+  "toolInput": {
+    "apptId": "[Appointment ID for Jenifer's appointment on April 13th at 9 a.m.]"
+  },
+  "toolOutput": "",
+  "error": {
+    "error": "Failed to cancel appointment",
+    "message": "$appointmentId is not defined",
+    "timestamp": "2025-11-19T18:23:37.933Z"
+  }
+}
+

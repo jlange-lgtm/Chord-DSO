@@ -1,0 +1,43 @@
+{
+  "tool": "chord_createPatient",
+  "toolInput": {
+    "firstName": "Henry",
+    "lastName": "Test",
+    "birthDate": "2013-09-12",
+    "insurance": "Delta",
+    "phoneNumber": "4445557878"
+  },
+  "toolOutput": {
+    "id": 429096201,
+    "email": "aiTest@intelepeer.com",
+    "first_name": "Henry",
+    "middle_name": null,
+    "last_name": "Test",
+    "name": "Henry Test",
+    "created_at": "2025-11-21T14:04:09.676Z",
+    "updated_at": "2025-11-21T14:04:09.676Z",
+    "institution_id": 1154,
+    "foreign_id": null,
+    "foreign_id_type": "nex",
+    "bio": {
+      "date_of_birth": "2013-09-12",
+      "phone_number": "4445557878",
+      "gender": "Female",
+      "new_patient": false
+    },
+    "inactive": false,
+    "last_sync_time": null,
+    "guarantor_id": null,
+    "unsubscribe_sms": false,
+    "balance": {
+      "amount": "0.00",
+      "currency": "USD"
+    },
+    "billing_type": null,
+    "chart_id": null,
+    "preferred_language": null,
+    "preferred_locale": null,
+    "location_ids": [333725]
+  }
+}
+

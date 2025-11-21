@@ -1,0 +1,9 @@
+{
+  "name": "chordNode_getApptSlots",
+  "description": "This tool is used to fetch the appointment slots available for patients to book a new appointment at the medical practice.",
+  "color": "linear-gradient(rgb(79,179,208), rgb(3,232,46))",
+  "iconSrc": "",
+  "schema": "[]",
+  "func": "\nconst fetch = require('node-fetch');\nconst url = `https://c1-aicoe-nodered-lb.prod.c1conversations.io/FabricWorkflow/api//exposed/chord/getApptSlots`;\n\ntry {\n    const response = await fetch(url, {\n        method: 'GET',\n        headers: {\n            'Content-Type': 'application/json'\n        }\n        })\n    \n    \n    const result = await response.json();\n\n    if (!response.ok) {\n        throw new Error(`HTTP ${response.status}: ${response.statusText}`);\n    }\n    return JSON.stringify(result);\n} catch (error) {\n    console.error('getDynamicMenu error:', error);\n    return JSON.stringify({\n        \"error\": \"getApptSlots Error: \" + error,\n        \"message\": `Could not fetch data for ${$requestType}`\n    });\n}",
+  "workspaceId": "9e7c759d-2623-4529-945d-6c578631aad0"
+}

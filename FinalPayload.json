@@ -1,0 +1,29 @@
+{
+"telephonyDisconnectCall": {
+"uuiPayload": "0000000000000000000000000a9f12588df6cd4768000000000005107",
+"phoneNumber": "+18445651519",
+"uuiTreatment": "override"
+},
+"setConfig": {
+"maxDTMFLength": 10,
+"DTMFTimeout": 5,
+"minDTMFLength": 1
+},
+"Call_Summary": {
+"Call_Location": "PDA West Philadelphia",
+"Caller_Identified": "True",
+"Caller_Name": "Jenifer Test",
+"Patient_Name": "Jenifer Test",
+"Patient_DOB": "2015-09-12",
+"Patient_Contact_Number": "5551112323",
+"Categorized_Intent": "SCH",
+"Final_Disposition": "APPOINTMENT SCHEDULED",
+"Action_Taken_Notes": "Scheduled cleaning appointment for Jenifer Test at PDA West Philadelphia for April thirteenth at eight a.m.",
+"Appointment_Details": "April thirteenth, eight a.m., PDA West Philadelphia",
+"providerId": "",
+"operatoryId": "",
+"Patient ID": "",
+"Appointment ID": ""
+},
+"TC": "13"
+}

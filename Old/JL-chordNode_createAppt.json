@@ -1,0 +1,9 @@
+{
+  "name": "chordNode_createAppt",
+  "description": "Use this tool to create a new appointment for a patient. You must pass in the appointment slot time to create an appointment.",
+  "color": "linear-gradient(rgb(75,102,26), rgb(111,116,92))",
+  "iconSrc": "",
+  "schema": "[{\"id\":0,\"property\":\"apptTime\",\"description\":\"This is the time for the new appointment to be created.\",\"type\":\"string\",\"required\":true},{\"id\":1,\"property\":\"operatoryId\",\"description\":\"This is the ID of the operatory slot for the appointment time.\",\"type\":\"string\",\"required\":true}]",
+  "func": "\nconst fetch = require('node-fetch');\nconst url = `https://c1-aicoe-nodered-lb.prod.c1conversations.io/FabricWorkflow/api/exposed/exposed/chord/createAppt`;\nconst apptTime = $apptTime;\nconst operatoryId = $operatoryId;\n\ntry {\n    const response = await fetch(url, {\n        method: 'POST',\n        headers: {\n            'Content-Type': 'application/json'\n        },\n        body: JSON.stringify({\n            apptTime: apptTime,\n            operatoryId: operatoryId\n        })\n    });\n    \n    const result = await response.json();\n\n    if (!response.ok) {\n        throw new Error(`HTTP ${response.status}: ${response.statusText}`);\n    }\n    return JSON.stringify(result);\n} catch (error) {\n    console.error('createAppointment error:', error);\n    return JSON.stringify({\n        \"error\": error\n    });\n}",
+  "workspaceId": "9e7c759d-2623-4529-945d-6c578631aad0"
+}
